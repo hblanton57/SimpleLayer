@@ -15,8 +15,10 @@ public class FactorialTests
     }
 
     [Fact]
-    public void Factorial_Failure()
+    public void Factorial_Negative()
     {
-        Assert.Equal(1, FactorialLogic.GetFactorialValue(-1));
+        Assert.Throws<Exception>(()=>{
+            FactorialLogic.GetFactorialValue(-1);
+        });
     }
 }
